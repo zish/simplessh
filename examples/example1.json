@@ -1,0 +1,31 @@
+{
+	"Opts":{
+		"Port":22,
+		"User":"cisco",
+		"Password":"cisco",
+		"AuthMethod":"password",
+		"IgnoreHostKey":false,
+		"Address":"ciscorouter.localdomain",
+		"UsePty":false,
+		"TerminalEcho":1,
+		"DebugLevel":1
+	},
+	"Commands":[
+		{ "Exec":"terminal length 0\n",
+			"ValidPatterns":{
+				"prompt":"\\#\\s*$"
+			},
+			"ErrorPatterns":{
+				"invalid_input":"% Invalid input detected at ['][^][']"
+			}
+		},
+		{ "Exec":"show inventory\n",
+			"ValidPatterns":{
+				"prompt":"\\#\\s*$"
+			},
+			"ErrorPatterns":{
+				"invalid_input":"% Invalid input detected at ['][^][']"
+			}
+		}
+	]
+}
